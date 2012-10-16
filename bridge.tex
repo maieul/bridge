@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{etoolbox}
+
+\def\size{}
+\listadd{\size}{Huge}
+\listadd{\size}{huge}
+\listadd{\size}{LARGE}
+\listadd{\size}{Large}
+\listadd{\size}{large}
+\listadd{\size}{normalsize}
+\listadd{\size}{small}
+\listadd{\size}{footnotesize}
+\listadd{\size}{scriptsize}
+\listadd{\size}{tiny}
+
+\begin{document}
+\renewcommand{\do}[1]{
+	\setbox0=\vbox{\csuse{#1}A}
+	\ifdimcomp{\ht0}{<}{9pt}{\listbreak}{}
+}
+
+
+\dolistloop{\size}
+\unvbox0
+
+
+\end{document}
