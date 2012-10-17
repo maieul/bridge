@@ -1,6 +1,9 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
+\usepackage{fontspec,logbox}
+\usepackage{xunicode}
+\setmainfont{Linux Libertine O}
 \usepackage{etoolbox}
-
+\usepackage[margin=2cm]{geometry}
 \def\size{}
 \listadd{\size}{Huge}
 \listadd{\size}{huge}
@@ -12,11 +15,64 @@
 \listadd{\size}{footnotesize}
 \listadd{\size}{scriptsize}
 \listadd{\size}{tiny}
-
+\newcommand{\g}[1]{\textbf{#1}}
 \begin{document}
+
 \renewcommand{\do}[1]{
-	\setbox0=\vbox{\csuse{#1}A}
-	\ifdimcomp{\ht0}{<}{9pt}{\listbreak}{}
+	\setbox0=\vbox{\csuse{#1}
+	\begin{tabular}{p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}}
+	\textbf{Principes de base} & \textbf{Interventions sur 1 couleur} & \textbf{Défausse} \\
+	
+	♥~♠  5ième SMI 				
+	Meilleure ♣~♦  ; SMI (sans 4C/P.),>10DH & Michael' CB (sauf bicolore noir > 1♦) & 1ère italienne à la couleur Lévinthal à SA \\
+	
+	\textbf{Ouvertures fortes} & \textbf{Interventions sur 2 majeur} & \textbf{Appel} \\
+	
+	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3:4) >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM picasso (3♥ ouvreur après 2♥ rép. = 5C+4P) & 4♣/♦ : l'autre majeure + la mineure annoncée & direct ou de préférence selon nbr car \\
+	
+	\g{Réponses particulières sur couleur} & \g{Interventions sur 3♣/♠ 4♣} & \\
+	
+	2SA fitté (id. >interv.) ; 3SA fitté 4° (12-14) splinters  ; 3ème forcing  ; 4ème forcing & 
+	X : 6T ou 6K ou 5T/K + 4C  ; 2 ♣ landy
+	2 ♦/♥ = texas  ; 2♠ = 4P+5T/K ; 2SA : 5T+5K
+	3♣ à 3♠ : naturel barrage & \\
+	
+	\g{Redemandes spéciales 18-19 H régulier} & \g{Défenses sur interventions >1 SA}\\
+	
+	> 1♣/♦  [1♥/♠] : 3 SA fitté 18-19 H, rég. 
+	> 1♣/♦  [1♥]  2SA ; possible 4P ou 3C
+	autre mineure : interrog majeure
+	& 
+	
+	Rubensohl  ; surcontre : texas impossible
+	
+	\\
+	
+	\g{Réponses particulières sur 1 SA} & \g{Défenses sur interventions > 1 couleur} & \\
+	
+	4♦ = 5p+5C 4 ♣ BW à voir après texas mineur : conv. Singleton après stayman : 3 autre M fitté fort & 2SA et 3SA Truscott		\\
+	
+	\g{Réponses particulières sur 1 SA} & \g{Réveil >1 SA} \\
+	
+	4♦ = 5p+5C 4 ♣ BW à voir après texas mineur : conv. Singleton  après stayman : 3 autre M fitté fort & 2♣ : appel majeures 4/4 ; X à voir & \\
+	\g{Après Passe sur ouverture 1♥ /♠} & \g{Réveil >1 Couleur} \\
+	
+	2♣ drury  ; 2SA singl., saut fitté nouv coul. & X oblig. ≥ ouv  ; 2♦ bic. maj ; 2SA 17-19 1SA : 9-12   ; & \\
+	
+	\g{Blackwood} & \g{Réveil > après passe et deux couleurs} \\
+	
+	5 clefs étendu & 1 SA = 6/4							 \\
+	
+	\g{Stayman et texas} \\
+	après 1 SA, 1SA d'Int ; 2SA, 2SA>2♣/♦  Pupett > 2SA, (et 2/3 SA >2♣/♦) \\
+	
+	\g{Après redemande 1 SA (1X/1Y/1SA)} \\
+	 
+	ping-pong \\
+	\end{tabular}
+	}
+	\ifdimcomp{\ht0+\dp0}{<}{\textheight}{\listbreak}{}
+	\typeout{taille : #1}
 }
 
 
