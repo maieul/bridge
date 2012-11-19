@@ -18,8 +18,16 @@
 \newcommand{\g}[1]{\textbf{#1}}
 \begin{document}
 
-\renewcommand{\do}[1]{
-	\setbox0=\vbox{\csuse{#1}
+\newcommand{\boitemax}[1]{
+	\renewcommand{\do}[1]{
+		\setbox0=\vbox{\csuse{##1}#1}
+		\ifdimcomp{\ht0+\dp0}{<}{\textheight}{\listbreak}{}
+	}
+	\dolistloop{\size}
+	\unvbox0
+}
+
+	\boitemax{
 	\begin{tabular}{p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}}
 	\textbf{Principes de base} & \textbf{Interventions sur 1 couleur} & \textbf{Défausse} \\
 	
@@ -70,14 +78,9 @@
 	 
 	ping-pong \\
 	\end{tabular}
-	}
-	\ifdimcomp{\ht0+\dp0}{<}{\textheight}{\listbreak}{}
-	\typeout{taille : #1}
 }
 
 
-\dolistloop{\size}
-\unvbox0
 
 
 \end{document}
