@@ -1,3 +1,4 @@
+% Tu ne touche à rien de ce qu'il y a en dessous
 \documentclass[a5paper]{article}
 \usepackage{fontspec,logbox}
 \usepackage{xunicode}
@@ -16,9 +17,6 @@
 \listadd{\size}{scriptsize}
 \listadd{\size}{tiny}
 \newcommand{\g}[1]{\textbf{#1}}
-\parindent=0pt
-\begin{document}
-
 \newcommand{\boitemax}[1]{
 	\renewcommand{\do}[1]{
 		\setbox0=\vbox{\csuse{##1}#1}
@@ -27,11 +25,15 @@
 	\dolistloop{\size}
 	\unvbox0
 }
-	\boitemax{
-	\textbf{Principes de base}\\
+\parindent=0pt
+\begin{document}
+% A partir d'ici tu peux toucher
+
+	\boitemax{					 % Entre les accolades de \boitemax{}, on dit à LaTeX d'essayer de ne pas dépasser la hauteur d'une page
+	\textbf{Principes de base}\\ % Un \\ indique un changement de ligne (≠ du changement de ¶)
 	♥~♠  5ième SMI 				\\
 	Meilleure ♣~♦  ; SMI (sans 4C/P.),>10DH\\
-	\textbf{Ouvertures fortes}\\
+	\g{Ouvertures fortes}\\		 % \g{texte en gras}
 	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3:4) >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM picasso (3♥ ouvreur après 2♥ rép. = 5C+4P)\\
 	\g{Réponses particulières sur couleur} \\
 	2SA fitté (id. >interv.) ; 3SA fitté 4° (12-14) splinters  ; 3ème forcing  ; 4ème forcing \\
@@ -54,8 +56,8 @@
 	}
 	
 	\boitemax{
-	\begin{tabular}{p{0.48\textwidth}|p{0.48\textwidth}}
-	 \textbf{Interventions sur 1 couleur} & \textbf{Défausse} \\
+	\begin{tabular}{p{0.48\textwidth}|p{0.48\textwidth}}		% Pour avoir deux colonnes (en théorie tu n'a pas à touché)
+	 \textbf{Interventions sur 1 couleur} & \textbf{Défausse} \\ % Le & indique le changement de colonne, le // le changement de ligne
 	
 	Michael' CB (sauf bicolore noir > 1♦) & 1ère italienne à la couleur Lévinthal à SA \\
 	
@@ -95,7 +97,7 @@
 	 & 1 SA = 6/4							 \\
 	
 
-	\end{tabular}
+	\end{tabular}							% Fin du tableau
 }
 
 
