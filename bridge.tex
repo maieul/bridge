@@ -1,10 +1,10 @@
-% Tu ne touche à rien de ce qu'il y a en dessous
-\documentclass[a5paper]{article}
+% Tu ne touche à rien de ce qu'il y a en dessous (toujours être réglé sur XeLaTeX)
+\documentclass[twoside,a5paper]{article}
 \usepackage{fontspec,logbox}
 \usepackage{xunicode}
 \setmainfont{Linux Libertine O}
 \usepackage{etoolbox}
-\usepackage[margin=2cm]{geometry}
+\usepackage[headsep=0.4cm,margin=1.0cm,tmargin=2cm]{geometry}
 \def\size{}
 \listadd{\size}{Huge}
 \listadd{\size}{huge}
@@ -25,81 +25,103 @@
 	\dolistloop{\size}
 	\unvbox0
 }
+\setlength{\parskip}{1ex}
+\let\exp\textsuperscript
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
 \parindent=0pt
 \begin{document}
+\fancyfoot{}
+\fancyhead{}
 % A partir d'ici tu peux toucher
+\fancyhead[CE]{LIPIETZ Hélène 792 988 - 4♠ / ROUQUETTE Rémi 792 996 - 4♠}
+\fancyhead[CO]{LIPIETZ Hélène 792 988 - 4♠ /  ROUQUETTE Rémi 792 996 - 4♠}
 
 	\boitemax{					 % Entre les accolades de \boitemax{}, on dit à LaTeX d'essayer de ne pas dépasser la hauteur d'une page
-	\textbf{Principes de base}\\ % Un \\ indique un changement de ligne (≠ du changement de ¶)
-	♥~♠  5ième SMI 				\\
-	Meilleure ♣~♦  ; SMI (sans 4C/P.),>10DH\\
-	\g{Ouvertures fortes}\\		 % \g{texte en gras}
-	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3:4) >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM picasso (3♥ ouvreur après 2♥ rép. = 5C+4P)\\
-	\g{Réponses particulières sur couleur} \\
-	2SA fitté (id. >interv.) ; 3SA fitté 4° (12-14) splinters  ; 3ème forcing  ; 4ème forcing \\
-	\g{Redemandes spéciales 18-19 H régulier} \\
+	\g{Principes de base}\newline % Un \newline indique un changement de ligne (≠ du changement de ¶)
+	♥~♠  5\exp{ème} SMI 				\newline
+	Meilleure ♣~♦  ; SMI (sans 4C/P.),>10DH
+	
+	\g{Ouvertures fortes}\newline		 % \g{texte en gras}
+	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3:4) >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM picasso (3♥ ouvreur après 2♥ rép. = 5C+4P)
+	
+	\g{Réponses particulières sur couleur} \newline
+	2SA fitté (id. >interv.) ; 3SA fitté 4° (12-14) splinters  ; 3ème forcing  ; 4ème forcing 
+	
+	\g{Redemandes spéciales 18-19 H régulier} \newline
 		> 1♣/♦  [1♥]  2SA ; possible 4P ou 3C
 	autre mineure : interrog majeure
-	\\
-	\g{Réponses particulières sur 1 SA} \\
-	4♦ = 5p+5C 4 ♣ BW à voir après texas mineur : conv. Singleton après stayman : 3 autre M fitté fort \\
-	\g{Réponses particulières sur 1 SA} \\
-	4♦ = 5p+5C 4 ♣ BW à voir après texas mineur : conv. Singleton  après stayman : 3 autre M fitté fort \\
-	\g{Après Passe sur ouverture 1♥ /♠} \\
-	2♣ drury  ; 2SA singl., saut fitté nouv coul. \\
-	\g{Blackwood}\\
-	5 clefs étendu\\
-	\g{Stayman et texas}
-		après 1 SA, 1SA d'Int ; 2SA, 2SA>2♣/♦  Pupett > 2SA, (et 2/3 SA >2♣/♦) \\
-	\g{Après redemande 1 SA (1X/1Y/1SA)} \\ 
-	ping-pong \\
+	
+	
+	\g{Réponses particulières sur 1 SA} \newline
+	4♦ = 5p+5C 4 ♣ BW à voir après texas mineur : conv. Singleton après stayman : 3 autre M fitté fort 
+	
+	\g{Réponses particulières sur 1 SA} \newline
+	\fbox{4♦} = 5p+5C 4 ♣ BW à voir après texas mineur : conv. Singleton  après stayman : 3 autre M fitté fort 
+	
+	\g{Après Passe sur ouverture 1♥ /♠} \newline
+	2♣ drury  ; 2SA singl., saut fitté nouv coul. 
+	
+	\g{Blackwood}\newline
+	5 clefs étendu
+	
+	\g{Stayman et texas}\newline
+		après 1 SA, 1SA d'Int ; 2SA, 2SA>2♣/♦  Pupett > 2SA, (et 2/3 SA >2♣/♦) 
+	
+	\g{Après redemande 1 SA (1X/1Y/1SA)}\newline 
+	ping-pong
+	\newline
 	}
 	
 	\boitemax{
+	
 	\begin{tabular}{p{0.48\textwidth}|p{0.48\textwidth}}		% Pour avoir deux colonnes (en théorie tu n'a pas à touché)
-	 \textbf{Interventions sur 1 couleur} & \textbf{Défausse} \\ % Le & indique le changement de colonne, le // le changement de ligne
+	 \g{Interventions sur 1 couleur}  \newline % Le  indique le changement de colonne, le // le changement de ligne
+	Michael' CB (sauf bicolore noir > 1♦)   
 	
-	Michael' CB (sauf bicolore noir > 1♦) & 1ère italienne à la couleur Lévinthal à SA \\
+	\g{Interventions sur 2 majeur}   \newline
+	4♣/♦ : l'autre majeure + la mineure annoncée   
 	
-	\textbf{Interventions sur 2 majeur} & \textbf{Appel} \\
-	
-	4♣/♦ : l'autre majeure + la mineure annoncée & direct ou de préférence selon nbr car \\
-	
-	\g{Interventions sur 3♣/♠ 4♣} & \\
-	
-	
+	\g{Interventions sur 3♣/♠ 4♣}  \newline
 	X : 6T ou 6K ou 5T/K + 4C  ; 2 ♣ landy
 	2 ♦/♥ = texas  ; 2♠ = 4P+5T/K ; 2SA : 5T+5K
-	3♣ à 3♠ : naturel barrage & \\
+	3♣ à 3♠ : naturel barrage 
 	
-	 \g{Défenses sur interventions >1 SA}\\
-	
+	 \g{Défenses sur interventions >1 SA}\newline
 	> 1♣/♦  [1♥/♠] : 3 SA fitté 18-19 H, rég. 
-
-	
 	Rubensohl  ; surcontre : texas impossible
 	
-	\\
 	
-	 \g{Défenses sur interventions > 1 couleur} & \\
+	 \g{Défenses sur interventions > 1 couleur}  \newline
+	2SA et 3SA Truscott
+	 		
+	 
+	 \g{Réveil >1 SA} \newline
+	2♣ : appel majeures 4/4 ; X à voir 
+	 
+	 \g{Réveil >1 Couleur} \newline
+	 X oblig. ≥ ouv  ; 2♦ bic. maj ; 2SA 17-19 1SA : 9-12   ; 
+	 
+	 \g{Réveil > après passe et deux couleurs}
+	 1 SA = 6/4	
+	 
 	
-	& 2SA et 3SA Truscott		\\
-	
-	 \g{Réveil >1 SA} \\
-	
-	2♣ : appel majeures 4/4 ; X à voir & \\
-	 \g{Réveil >1 Couleur} \\
-	
-	 X oblig. ≥ ouv  ; 2♦ bic. maj ; 2SA 17-19 1SA : 9-12   ; & \\
-	
-	 \g{Réveil > après passe et deux couleurs} \\
-	
-	 & 1 SA = 6/4							 \\
+	  						 
+	 
+	  &% la deuxieme colonne est en dessous
+	 
+	  \g{Défausse} \newline
+	  1ère italienne à la couleur Lévinthal à SA
+	  
+	  \g{Appel} \newline
+	 direct ou de préférence selon nbr car
+	 \\
 	
 
 	\end{tabular}							% Fin du tableau
-}
 
+}
 
 
 
