@@ -4,11 +4,11 @@
 \usepackage{xunicode}
 \setmainfont{Linux Libertine O}
 \usepackage{etoolbox}
-\usepackage[headsep=0.1cm,margin=0.1cm,tmargin=0.6cm]{geometry}%%% attention l'entete se trouve "dans" la marge
-\setlength{\parskip}{1ex}
-\renewcommand{\columnseprulecolor}{\color{black}}
-\setlength{\columnseprule}{0.3pt}
-
+\usepackage[headsep=0.1cm,margin=0.1cm,tmargin=0.6cm]{geometry}	%%% attention l'entete se trouve "dans" la marge
+\setlength{\parskip}{3ex}										%%% le saut avant les débuts de paragraphe 1ex = la hauteur d'un x minuscule
+\renewcommand{\columnseprulecolor}{\color{black}}				%%% couleur du séparateur de colon (en fait je ne sais pas pq, mais un peu plus clair)
+\setlength{\columnseprule}{0.3pt}								%%% taille du séparateur de column
+\parindent=0pt													%%% taille de l'indentation de la première ligne de ¶
 
 
 \def\size{}
@@ -35,7 +35,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyfoot{}
-\parindent=0pt
+
 \begin{document}
 \fancyfoot{}
 \fancyhead{}
