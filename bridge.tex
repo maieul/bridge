@@ -4,7 +4,7 @@
 \usepackage{xunicode}
 \setmainfont{Linux Libertine O}
 \usepackage{etoolbox}
-\usepackage[headsep=0.4cm,margin=1.0cm,tmargin=2cm]{geometry}
+\usepackage[headsep=0.1cm,margin=0.1cm,tmargin=0.1cm]{geometry}
 \def\size{}
 \listadd{\size}{Huge}
 \listadd{\size}{huge}
@@ -40,70 +40,95 @@
 
 	\boitemax{					 % Entre les accolades de \boitemax{}, on dit à LaTeX d'essayer de ne pas dépasser la hauteur d'une page
 	\g{Principes de base}\newline % Un \newline indique un changement de ligne (≠ du changement de ¶)
-	♥~♠  5\exp{ème} SMI 				\newline
-	Meilleure ♣~♦  ; SMI (sans 4C/P.),>10DH
+	♥~♠  5\exp{ème} ; Meilleure ♣~♦  ; SMI (sans 4C/P.),>10DH		\newline
 	
 	\g{Ouvertures fortes}\newline		 % \g{texte en gras}
-	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3:4) >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM picasso (3♥ ouvreur après 2♥ rép. = 5C+4P)
+	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3:4)\newline
+	 >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM ; Picasso (3♥ ouvreur > rép. 2♥  = 5C+4P)
 	
 	\g{Réponses particulières sur couleur} \newline
-	2SA fitté (id. >interv.) ; 3SA fitté 4° (12-14) splinters  ; 3ème forcing  ; 4ème forcing 
+	2SA fitté (id. >interv.) ; 3SA fitté 4° (12-14 H) ; splinters  ; 3ème forcing  ; 4ème forcing 
 	
-	\g{Redemandes spéciales 18-19 H régulier} \newline
-		> 1♣/♦  [1♥]  2SA ; possible 4P ou 3C
-	autre mineure : interrog majeure
+	\g{ Enchères répondant spéciales > redemande 2SA 18-19 H régulier} \newline
+		> 1♣/♦  [1♥/♠]  2SA ; possible 4P ou 3C\newline
+	> 2SA : autre mineure : interrog majeure; réponses : naturel + soutien fausse mineure = 4/3 majeur
 	
+		\g{Réponses particulières sur 1 SA} \newline
+	4♦ = 5p+5C moyen ; 4 ♣ id. + ambition chelem ; 
+	> texas mineur : conv. Singleton\newline ; > stayman : 3 autre Majeure = fitté fort ; 
+	> Stayman majeures croisées si 4/5 cartes ; texas 4♣/♦ si 6 cartes
+	 
+	 \g{Après Passe sur ouverture 1♥ /♠} \newline
+	2♣ drury  ; 2SA singl., enchères de rencontre (saut fitté dans nouvelle coul) \newline
+	2♦ fitté faible (5-7 DH) ; 2♥/♠ fitté fort (8-10 DH)
 	
-	\g{Réponses particulières sur 1 SA} \newline
-	4♦ = 5p+5C 4 ♣ BW à voir après texas mineur : conv. Singleton après stayman : 3 autre M fitté fort 
-	
-	\g{Réponses particulières sur 1 SA} \newline
-	\fbox{4♦} = 5p+5C 4 ♣ BW à voir après texas mineur : conv. Singleton  après stayman : 3 autre M fitté fort 
-	
-	\g{Après Passe sur ouverture 1♥ /♠} \newline
-	2♣ drury  ; 2SA singl., saut fitté nouv coul. 
-	
-	\g{Blackwood}\newline
-	5 clefs étendu
+	\g{Enchères de Chelem}\newline
+	Blackwood : 5 clefs étendu, 30-41 ; Joséphine
 	
 	\g{Stayman et texas}\newline
-		après 1 SA, 1SA d'Int ; 2SA, 2SA>2♣/♦  Pupett > 2SA, (et 2/3 SA >2♣/♦) 
+		> 1 SA, 1SA d'Int ; 2SA, 2SA d'int. ; 2SA>2♣/♦ 
+	\g{Stayman pupett}\newline
+  	 > 2SA, (et 2/3 SA >2♣/♦) 
 	
 	\g{Après redemande 1 SA (1X/1Y/1SA)}\newline 
-	ping-pong
+	ping-pong; 2♦ oblig. sauf 2♥ /♠ fitté faible; 2♥ si singl. P et 4C
 	\newline
 	}
+	
 	
 	\boitemax{
 	
 	\begin{tabular}{p{0.48\textwidth}|p{0.48\textwidth}}		% Pour avoir deux colonnes (en théorie tu n'a pas à touché)
 	 \g{Interventions sur 1 couleur}  \newline % Le  indique le changement de colonne, le // le changement de ligne
-	Michael' CB (sauf bicolore noir > 1♦)   
+	Michael' CB (sauf bicolore noir > 1♦)   \newline
+	
 	
 	\g{Interventions sur 2 majeur}   \newline
-	4♣/♦ : l'autre majeure + la mineure annoncée   
+	4♣/♦ : l'autre majeure + la mineure annoncée   \newline
 	
-	\g{Interventions sur 3♣/♠ 4♣}  \newline
+	
+	\g{Interventions sur 3♣/3♦/ 4♣} \newline
+	4♦ = bicolore majeur \newline
+	
+	
+	\g{Interventions sur 2,3,4♥/♠/} \newline
+	4SA = bicolore mineur \newline
+
+
+	\g{Interventions sur 1 SA}  \newline
 	X : 6T ou 6K ou 5T/K + 4C  ; 2 ♣ landy
-	2 ♦/♥ = texas  ; 2♠ = 4P+5T/K ; 2SA : 5T+5K
-	3♣ à 3♠ : naturel barrage 
+	2 ♦/♥ = texas  ; 2♠ = 4P+5T/K ; 2SA : 5T+5K \newline;
+	3♣ à 3♠ : naturel barrage \newline
+	
 	
 	 \g{Défenses sur interventions >1 SA}\newline
 	> 1♣/♦  [1♥/♠] : 3 SA fitté 18-19 H, rég. 
-	Rubensohl  ; surcontre : texas impossible
+	Rubensohl  ; surcontre : texas impossible\newline
 	
 	
+
 	 \g{Défenses sur interventions > 1 couleur}  \newline
-	2SA et 3SA Truscott
+	2SA et 3SA Truscott\newline
+	 
 	 		
 	 
+	 \g{Défenses sur intervention par 1SA}  \newline
+	Landik et texas (2♣ promet 2 majeures si non fitté ds mineure, 1 majeure si fitté)\newline
+	 	
+			
 	 \g{Réveil >1 SA} \newline
-	2♣ : appel majeures 4/4 ; X à voir 
+	2♣ : appel majeures 4/4 ; X à voir \newline
 	 
-	 \g{Réveil >1 Couleur} \newline
-	 X oblig. ≥ ouv  ; 2♦ bic. maj ; 2SA 17-19 1SA : 9-12   ; 
 	 
-	 \g{Réveil > après passe et deux couleurs}
+	 \g{Réveil >1 ♣/♦} \newline
+	 X oblig. ≥ ouv  ; CB bic. maj ; 2SA 17-19 1SA : 9-12   ; \newline
+	 
+	 
+	  \g{Réveil >1 ♥/♠} \newline
+	 X oblig. ≥ ouv  ; CB bic. min. ; 2SA 17-19 ; 1SA : 9-12   ; \newline
+
+
+	\g{Réveil > après passe et deux couleurs}
 	 1 SA = 6/4	
 	 
 	
@@ -112,12 +137,25 @@
 	  &% la deuxieme colonne est en dessous
 	 
 	  \g{Défausse} \newline
-	  1ère italienne à la couleur Lévinthal à SA
+	  1ère italienne à la couleur 
+	  Lévinthal à SA\newline
+	  
 	  
 	  \g{Appel} \newline
-	 direct ou de préférence selon nbr car
-	 \\
-	
+	 direct ou de préférence selon nbr cartes\newline
+	 \
+	 
+	 
+	 \g{Entame SA} \newline
+	quatrième meilleure; honneur dans couleur quatrième de 4 grosses cartes ou cinquième de 3 grosses cartes, roi débloquant\newline
+
+
+	\g{Entame Couleur} \newline
+	RA = doubleton de la couleur ou singleton autre couleur\newline
+
+
+	\g{appel spéciaux} \newline
+	appel de Smith
 
 	\end{tabular}							% Fin du tableau
 
