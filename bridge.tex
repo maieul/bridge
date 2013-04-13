@@ -1,10 +1,16 @@
 % Tu ne touche à rien de ce qu'il y a en dessous (toujours être réglé sur XeLaTeX)
 \documentclass[twoside,a5paper]{article}
-\usepackage{fontspec,logbox}
+\usepackage{fontspec,logbox,multicol,xcolor}
 \usepackage{xunicode}
 \setmainfont{Linux Libertine O}
 \usepackage{etoolbox}
 \usepackage[headsep=0.1cm,margin=0.1cm,tmargin=0.6cm]{geometry}%%% attention l'entete se trouve "dans" la marge
+\setlength{\parskip}{1ex}
+\renewcommand{\columnseprulecolor}{\color{black}}
+\setlength{\columnseprule}{0.1pt}
+
+
+
 \def\size{}
 \listadd{\size}{Huge}
 \listadd{\size}{huge}
@@ -25,7 +31,6 @@
 	\dolistloop{\size}
 	\unvbox0
 }
-\setlength{\parskip}{1ex}
 \let\exp\textsuperscript
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -78,7 +83,7 @@
 	
 	\boitemax{
 	
-	\begin{tabular}{p{0.48\textwidth}|p{0.48\textwidth}}		% Pour avoir deux colonnes (en théorie tu n'a pas à touché)
+	\begin{multicols}{2}
 	 \g{Interventions sur 1 couleur}  \newline % Le  indique le changement de colonne, le // le changement de ligne
 	Michael' CB (sauf bicolore noir > 1♦)   \newline
 	
@@ -134,7 +139,7 @@
 	
 	  						 
 	 
-	  &% la deuxieme colonne est en dessous
+	 \vfill\columnbreak% &% la deuxieme colonne est en dessous
 	 
 	  \g{Défausse} \newline
 	  1ère italienne à la couleur 
@@ -143,7 +148,7 @@
 	  
 	  \g{Appel} \newline
 	 direct ou de préférence selon nbr cartes\newline
-	 \
+	 
 	 
 	 
 	 \g{Entame SA} \newline
@@ -157,8 +162,8 @@
 	\g{appel spéciaux} \newline
 	appel de Smith
 
-	\end{tabular}							% Fin du tableau
-
+	
+	\end{multicols}
 }
 
 
