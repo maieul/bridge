@@ -12,18 +12,19 @@
 
 \newcommand{\g}[1]{\textbf{#1}}
 
+
+\newcommand{\boitemax}[1]{%
 \csnumdef{taille}{20}											%%% la taille maximale de police (en pt(
-\newcommand{\boitemax}[1]{
-\setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}
-\csdimdef{totale}{\ht0+\dp0}
-\loop
-\ifdim \totale> \textheight
-	\setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}
-	\csnumdef{taille}{\taille-1}
-	\csdimdef{totale}{\ht0+\dp0}
-	\GenericWarning{}{Taille de police : \taille}
-\repeat
-\unvbox0
+\setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}%
+\csdimdef{totale}{\ht0+\dp0}%
+\loop%
+\ifdim \totale> \textheight%
+	\setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}%
+	\csnumdef{taille}{\taille-1}%
+	\csdimdef{totale}{\ht0+\dp0}%
+	\GenericWarning{}{Taille de police : \taille}%
+\repeat%
+\unvbox0%
 }
 \let\exp\textsuperscript
 \usepackage{fancyhdr}
@@ -78,7 +79,6 @@
  
 	\g{Après redemande 1 SA (1X/1Y/1SA)}\newline 
 	ping-pong; 2♦ oblig. sauf 2♥ /♠ fitté faible; 2♥ si singl. P et 4C
-	\newline
 	}
 	
 	
