@@ -4,7 +4,7 @@
 \usepackage{xunicode}
 \setmainfont{Linux Libertine O}
 \usepackage{etoolbox}
-\usepackage[headsep=0.1cm,margin=0.1cm,tmargin=0.6cm,outer=0.5cm,inner=0.2cm]{geometry}	%%% attention l'entete se trouve "dans" la marge
+\usepackage[headsep=0.1cm,margin=0.1cm,tmargin=0.6cm,outer=1cm]{geometry}	%%% attention l'entete se trouve "dans" la marge
 \setlength{\parskip}{3ex}										%%% le saut avant les débuts de paragraphe 1ex = la hauteur d'un x minuscule
 \renewcommand{\columnseprulecolor}{\color{black}}				%%% couleur du séparateur de colon (en fait je ne sais pas pq, mais un peu plus clair)
 \setlength{\columnseprule}{0.3pt}								%%% taille du séparateur de column
@@ -40,44 +40,47 @@
 \fancyfoot{}
 \fancyhead{}
 % A partir d'ici tu peux toucher
-\fancyhead[CE]{LIPIETZ Hélène 792 988 - 4♠ / ROUQUETTE Rémi 792 996 - 4♠}
-\fancyhead[CO]{LIPIETZ Hélène 792 988 - 4♠ /  ROUQUETTE Rémi 792 996 - 4♠}
+\fancyhead[CE]{LIPIETZ Hélène 792 988  / ROUQUETTE Rémi 792 996}
+\fancyhead[CO]{LIPIETZ Hélène 792 988  /  ROUQUETTE Rémi 792 996}
 
 	\boitemax{					 % Entre les accolades de \boitemax{}, on dit à LaTeX d'essayer de ne pas dépasser la hauteur d'une page
 	\g{Principes de base}\newline % Un \newline indique un changement de ligne (≠ du changement de ¶)
-	♥~♠  5\exp{ème} ; Meilleure ♣~♦  ; SMI (sans 4C/P.),>10DH		
+	♥~♠  5\exp{ème} ; Meilleure ♣~♦ souple  ; SMI (sans 4C/P.),>10DH		
 	
 	\g{Ouvertures fortes}\newline		 % \g{texte en gras}
-	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3:4)\newline
-	 >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM ; Picasso (3♥ ouvreur > rép. 2♥  = 5C+4P)
+	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3/4)\newline
+	 >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM ; Picasso (3♠ ouvreur > rép. 2♥  = 5C+4P)\newline
+	> 2SA répondant :  stayman virtuel (3♣ = jeu irrégulier)
 	
 	\g{Réponses particulières sur couleur} \newline
-	2SA fitté (id. >interv.) ; 3SA fitté 4° (12-14 H) ; splinters  ; 3ème forcing  ; 4ème forcing
+	2SA fitté (4 cartes >interv.) ; 3SA fitté 4° (12-14 H) ; splinters  ; 3ème forcing  ; 4ème forcing
 	
-	\g{ Enchères répondant spéciales > redemande 2SA 18-19 H régulier} \newline
-		> 1♣/♦  [1♥/♠]  2SA ; possible 4P ou 3C\newline
-	> 2SA : autre mineure : interrog majeure; réponses : naturel + soutien fausse mineure = 4/3 majeur
 	
 		\g{Réponses particulières sur 1 SA} \newline
 	4♦ = 5p+5C moyen ; 4 ♣ id. + ambition chelem ; \newline
 	> texas mineur : conv. Singleton\newline ; 
 	> stayman : 3 autre Majeure = fitté fort ; \newline
 	> Stayman majeures croisées si 4/5 cartes ; texas 4♣/♦ si 6 cartes
-	 
-	 \g{Après Passe sur ouverture 1♥ /♠} \newline
-	2♣ drury  ; 2SA singl., enchères de rencontre (saut fitté dans nouvelle coul) \newline
+	
+	\g{ Enchères spéciales > redemande 2SA à saut 18-19 H possible 4P ou 3C } \newline
+	> 1♣/♦  [1♥/♠]  2SA ; \newline
+	autre mineure : interrog majeure; réponses : naturel + soutien fausse mineure = 3/4 majeur
+		 
+	 \g{Après  ouverture 1♥ /♠ en troisième ou quatrième} \newline
+	2♣ drury  ; 2SA singl. ; enchères de rencontre (saut fitté dans nouvelle coul + 11DH) \newline
 	2♦ fitté faible (5-7 DH) ; 2♥/♠ fitté fort (8-10 DH)
 	
 	\g{Enchères de Chelem}\newline
 	Blackwood : 5 clefs étendu, 30-41 ; petit et grand Joséphine
 	
 	\g{Stayman et texas}\newline
-		> 1 SA, 1SA d'Int ; 2SA, 2SA d'int. ; 2SA>2♣/♦ \newline
+		> 1 SA ; 1SA d'Intervention ou de réveil  \newline
+		> 2SA ; 2SA d'interv. ou de réveil ; 2SA>2♣/♦ \newline
 	\g{Stayman pupett}\newline
   	 > 2SA, (et 2/3 SA >2♣/♦) 
 		
 	\g{Redemande fitté à 3SA (1X/1Y/1SA)}\newline 
-		> 1♣/♦  [1♥/♠] : 3 SA fitté 18-19 H, rég. \newline 
+		> 1♣/♦  [1♥/♠] : 3 SA fitté 4 cartes 18-19 H, rég. \newline 
  
 	\g{Après redemande 1 SA (1X/1Y/1SA)}\newline 
 	ping-pong; 2♦ oblig. sauf 2♥ /♠ fitté faible; 2♥ si singl. P et 4C
@@ -88,7 +91,7 @@
 	\boitemax{
 	\begin{multicols}{2}
 	 \g{Interventions sur 1 couleur}  \newline % Le  indique le changement de colonne, le // le changement de ligne
-	Michael' CB (sauf bicolore noir > 1♦)   
+	Michael' CB  précisé (sauf bicolore noir > 1♦)   
 	
 	
 	\g{Interventions sur 2 majeur}   \newline
@@ -107,6 +110,7 @@
 	X : 6T ou 6K ou 5T/K + 4C  ; 2 ♣ landy\newline
 	2 ♦/♥ = texas  ; 2♠ = 4P+5T/K ; 2SA : 5T+5K \newline;
 	3♣ à 3♠ : naturel barrage \newline
+	surcontre SOS \newline
 	––––––––––––––––––––––––––––
 	
 	 \g{Défenses sur interventions >1 SA}\newline
@@ -115,7 +119,7 @@
 	
 
 	 \g{Défenses sur interventions > 1 couleur}  \newline
-	2SA et 3SA Truscott
+	2SA et 3SA Truscott généralisés
 	 
 	 		
 	 
@@ -125,7 +129,8 @@
 		 \vfill\columnbreak% &% la deuxieme colonne est en dessous
 
  	\g{Réveil >1 SA} \newline
-	2♣ à 2♠ ; X 2 maj. 4ème ou + [réponses naturelles]
+	2♣ à 2♠ naturel \newline
+	X 2 maj. 4ème ou + [réponses naturelles]
 	 
 	 
 	 \g{Réveil >1 ♣/♦} \newline
@@ -140,9 +145,8 @@
 	\g{Réveil > après passe et deux couleurs}\newline
 	 1 SA = 6 la moins chère/4	 la plus chère
 	 
-	  
 	 \rule{\linewidth}{1.5pt}
-	 
+	 		 
 	  \g{Défausse} \newline
 	  1ère italienne à la couleur \newline
 	  Lévinthal à SA
