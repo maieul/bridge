@@ -14,13 +14,13 @@
 
 
 \newcommand{\boitemax}[1]{%
-\csnumdef{taille}{20}											%%% la taille maximale de police (en pt(
+\csdimdef{taille}{20pt}											%%% la taille maximale de police (en pt(
 \setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}%
 \csdimdef{totale}{\ht0+\dp0}%
 \loop%
 \ifdim \totale> \textheight%
 	\setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}%
-	\csnumdef{taille}{\taille-1}%
+	\csdimdef{taille}{\taille-0.1pt}%
 	\csdimdef{totale}{\ht0+\dp0}%
 	\GenericWarning{}{Taille de police : \taille}%
 \repeat%
