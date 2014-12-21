@@ -2,6 +2,7 @@
 \documentclass[twoside,a4paper]{article}
 \usepackage{fontspec,logbox,multicol,xcolor}
 \usepackage{xunicode}
+\usepackage{xargs}
 \setmainfont{Linux Libertine O}
 \usepackage{polyglossia}
 \setmainlanguage{french}
@@ -16,18 +17,17 @@
 \newcommand{\g}[1]{\textbf{#1}}
 \renewcommand{\i}[1]{\textit{#1}}
 
-
-\newcommand{\boitemax}[1]{%
+\newcommandx{\boitemax}[2][1=1,usedefault]{%
   \sloppy%
   \csdimdef{taille}{20pt}%											%%% la taille maximale de police (en pt(
-  \setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}%
+  \setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #2}%
   \csdimdef{totale}{\ht0+\dp0}%
   \loop%
-  \ifdim \totale> \textheight%
-	\setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}%
-	\csdimdef{taille}{\taille-0.1pt}%
+  \ifdim \totale> #1\textheight%
+	\setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #2}%
+	\csdimdef{taille}{\taille-1pt}%
 	\csdimdef{totale}{\ht0+\dp0}%
-	\GenericWarning{}{Taille de police : \taille}%
+	\GenericWarning{}{Taille de police : \taille, \the\dimen\totale}%
   \repeat%
   \unvbox0%
 }
@@ -43,137 +43,136 @@
 \fancyhead[CE]{LIPIETZ Hélène 792 988  / ROUQUETTE Rémi 792 996}
 \fancyhead[CO]{LIPIETZ Hélène 792 988  /  ROUQUETTE Rémi 792 996}
 
-	\boitemax{					 % Entre les accolades de \boitemax{}, on dit à LaTeX d'essayer de ne pas dépasser la hauteur d'une page
-	\g{Principes de base}\newline % Un \newline indique un changement de ligne (≠ du changement de ¶)
-	♥~♠  5\exp{ème} ; Meilleure ♣~♦ souple  ; SMI (sans 4C/P.),>10DH		
-	
-	\g{Ouvertures fortes}\newline		 % \g{texte en gras}
-	>2♣  ;  ctrl italiens 2♦ (≤2)  ; 2♥ ->3♦ (3/4)\newline
-	 >2♦ : 2♠ (As ♥/♠)  ; 3♣ ♦ (As ♣ ♦)  ; CRM ; Picasso (3♠ ouvreur > rép. 2♥  = 5C+4P)\newline
-	> 2SA répondant :  stayman virtuel (3♣ = jeu irrégulier)
-	
-	\g{Réponses particulières sur couleur} \newline
-	2SA fitté (4 cartes >interv.) ; 3SA fitté 4° (12-14 H) ; splinters  ; 3ème forcing  ; 4ème forcing
-	
-	
-		\g{Réponses particulières sur 1 SA} \newline
-	4♦ = 5p+5C moyen ; 4 ♣ id. + ambition chelem ; \newline
-	> texas mineur : conv. Singleton\newline ; 
-	> stayman : 3 autre Majeure = fitté fort ; \newline
-	> Stayman majeures croisées si 4/5 cartes ; texas 4♣/♦ si 6 cartes
-	
-	\g{ Enchères spéciales > redemande 2SA à saut 18-19 H possible 4P ou 3C } \newline
-	> 1♣/♦  [1♥/♠]  2SA ; \newline
-	autre mineure : interrog majeure; réponses : naturel + soutien fausse mineure = 3/4 majeur
-		 
-	 \g{Après  ouverture 1♥ /♠ en troisième ou quatrième} \newline
-	2♣ drury  ; 2SA singl. ; enchères de rencontre (saut fitté dans nouvelle coul + 11DH) \newline
-	2♦ fitté faible (5-7 DH) ; 2♥/♠ fitté fort (8-10 DH)
-	
-	\g{Enchères de Chelem}\newline
-	Blackwood : 5 clefs étendu, 30-41 ; petit et grand Joséphine
-	
-	\g{Stayman et texas}\newline
-		> 1 SA ; 1SA d'Intervention ou de réveil  \newline
-		> 2SA ; 2SA d'interv. ou de réveil ; 2SA>2♣/♦ \newline
-	\g{Stayman pupett}\newline
-  	 > 2SA, (et 2/3 SA >2♣/♦) 
-		
-	\g{Redemande fitté à 3SA (1X/1Y/1SA)}\newline 
-		> 1♣/♦  [1♥/♠] : 3 SA fitté 4 cartes 18-19 H, rég. 
- 
-	\g{Après redemande 1 SA (1X/1Y/1SA)}\newline 
-	ping-pong; 2♦ oblig. sauf 2♥ /♠ fitté faible; 2♥ si singl. P et 4C
-	}
-	
-	
-	\boitemax{
-	\begin{multicols}{2}
-	 \g{Interventions sur 1 couleur}  \newline % Le  indique le changement de colonne, le // le changement de ligne
-	Michael' CB  précisé (sauf bicolore noir > 1♦)   
-	
-	
-	\g{Interventions sur 2 majeur}   \newline
-	4♣/♦ : l'autre majeure + la mineure annoncée \newline  
-	Cue-bid : bicolore mineur ; 4SA très beau bicolore mineur
-	
-	\g{Interventions sur 3♣/3♦/ 4♣} \newline
-	4♦ = bicolore majeur 
-	
-	
-	\g{Interventions sur 2,3,4♥/♠/} \newline
-	4SA = bicolore mineur (sauf > 4♠, tous bic.)
+\title{Feuille de Bridge}
+\author{Rouquette-Lipietz}
+
+\boitemax[3]{Lorem  & ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
 
-	\g{Interventions sur 1 SA}  \newline
-	X : 6T ou 6K ou 5T/K + 4C  ; 2 ♣ landy\newline
-	2 ♦/♥ = texas  ; 2♠ = 4P+5T/K ; 2SA : 5T+5K \newline;
-	3♣ à 3♠ : naturel barrage \newline
-	surcontre SOS \newline
-	––––––––––––––––––––––––––––
-	
-	 \g{Défenses sur interventions >1 SA}\newline
-	Rubensohl  ; surcontre ; texas impossible singl. et autre Maj.
-	
-	
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
-	 \g{Défenses sur interventions > 1 couleur}  \newline
-	2SA et 3SA Truscott généralisés
-	 
-	 		
-	 
-	 \g{Défenses sur intervention par 1SA}  \newline
-	Landik et texas (2♣ promet 2 majeures si non fitté ds mineure, 1 majeure si fitté) \newline
-	   			
-		 \vfill\columnbreak% &% la deuxieme colonne est en dessous
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
- 	\g{Réveil >1 SA} \newline
-	2♣ à 2♠ naturel \newline
-	X 2 maj. 4ème ou + [réponses naturelles]
-	 
-	 
-	 \g{Réveil >1 ♣/♦} \newline
-	 X oblig. ≥ ouv  ; CB bic. maj ; 2SA 17-19 ; 1SA : 9-12   ; 
-	 
-	 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
-	  \g{Réveil >1 ♥/♠} \newline
-	 X oblig. ≥ ouv  ; CB autre Maj + mineure indéterminée. ; 2SA 17-19 ; 1SA : 9-12   ; 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
-	\g{Réveil > après passe et deux couleurs}\newline
-	 1 SA = 6 la moins chère/4	 la plus chère
-	 
-	 \rule{\linewidth}{1.5pt}
-	 		 
-	  \g{Défausse} \newline
-	  1ère italienne à la couleur \newline
-	  Lévinthal à SA
-	  
-	  
-	  \g{Appel} \newline
-	 direct ou de préférence selon nombre cartes
-	 
-	   						 
-	 
-	 
-	 \g{Entame SA} \newline
-	quatrième meilleure; honneur dans couleur quatrième de 4 grosses cartes ou cinquième de 3 grosses cartes, roi débloquant
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
 
-	\g{Entame Couleur} \newline
-	Pair impair\newline
-	RA = doubleton de la couleur ou singleton autre couleur
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
 
-	\g{Appel spéciaux} \newline
-	appel de Smith
-
-	
-	\end{multicols}
-	\vspace{-2\parskip}
-}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
 
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis, tortor vitae lobortis porttitor, sapien est venenatis massa, quis gravida nibh ipsum quis metus.}
 
 \end{document}
