@@ -44,6 +44,21 @@
 \pagestyle{fancy}
 \fancyfoot{}
 
+\makeatletter
+\renewcommand{\maketitle}{
+\strut\vfill
+\begin{center}
+
+\emph{\@title}
+
+\@author
+
+{\small\@date}
+
+\end{center}
+\vfill
+}
+\makeatother
 
 \begin{document}
 \fancyfoot[CE]{\thepage}
@@ -53,10 +68,17 @@
 \fancyhead[CE]{LIPIETZ Hélène 792 988  / ROUQUETTE Rémi 792 996}
 \fancyhead[CO]{LIPIETZ Hélène 792 988  /  ROUQUETTE Rémi 792 996}
 
-\title{Feuille de Bridge}
-\author{Rouquette-Lipietz}
+\title{Feuille de marque}
+\author{Hélène Lipietz\\
+&\\
+Rémi Rouquette
+}
 
+\begin{simple}
 
+\maketitle
+
+\end{simple}
 
 \begin{triple}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce feugiat turpis in velit efficitur, et tempus ipsum aliquet. Aenean sed tortor facilisis, ultrices purus sed, vulputate orci. Aenean non erat magna. Suspendisse scelerisque, dolor et elementum ultrices, erat nunc convallis enim, id lobortis sapien odio eu nibh. Nullam porta mi nec libero euismod, et accumsan massa ultricies. Maecenas in lobortis felis. Curabitur at condimentum eros. Vestibulum imperdiet nunc placerat dolor sagittis porta. Nulla venenatis, mi a bibendum mollis, mi ipsum hendrerit dolor, non fringilla nisi enim vel sem. Sed interdum neque at ex mollis tincidunt. In in ex vel nibh ullamcorper pharetra. Maecenas molestie elementum sodales. Praesent et sem nibh. Sed in risus vehicula, tincidunt erat nec, iaculis massa. Aliquam finibus dapibus arcu, vel porta arcu pulvinar eget. Proin posuere, odio non efficitur egestas, leo arcu pellentesque quam, non pulvinar augue sem nec neque.
