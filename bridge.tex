@@ -8,7 +8,7 @@
 \usepackage{polyglossia}
 \setmainlanguage{french}
 \usepackage{etoolbox}
-\usepackage[headsep=0.1cm,inner=1cm,tmargin=0.6cm,outer=1cm,bmargin=0.1cm]{geometry}	%%% attention l'entete se trouve "dans" la marge
+\usepackage[headsep=0.1cm,inner=1cm,tmargin=0.6cm,outer=1cm,bmargin=1.2cm]{geometry}	%%% attention l'entete se trouve "dans" la marge
 \setlength{\parskip}{3ex}										%%% le saut avant les débuts de paragraphe 1ex = la hauteur d'un x minuscule
 \renewcommand{\columnseprulecolor}{\color{black}}				%%% couleur du séparateur de colon (en fait je ne sais pas pq, mais un peu plus clair)
 \setlength{\columnseprule}{0.3pt}								%%% taille du séparateur de column
@@ -46,7 +46,8 @@
 
 
 \begin{document}
-\fancyfoot{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
 \fancyhead{}
 % A partir d'ici tu peux toucher
 \fancyhead[CE]{LIPIETZ Hélène 792 988  / ROUQUETTE Rémi 792 996}
@@ -54,6 +55,7 @@
 
 \title{Feuille de Bridge}
 \author{Rouquette-Lipietz}
+
 
 
 \begin{triple}
