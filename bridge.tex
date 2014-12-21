@@ -18,6 +18,7 @@
 
 
 \newcommand{\boitemax}[1]{%
+  \sloppy%
   \csdimdef{taille}{20pt}%											%%% la taille maximale de police (en pt(
   \setbox0=\vbox{\fontsize{\taille}{\taille}\selectfont #1}%
   \csdimdef{totale}{\ht0+\dp0}%
